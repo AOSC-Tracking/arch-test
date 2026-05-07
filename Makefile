@@ -18,11 +18,11 @@ ARCHS=amd64 x32 i386 \
 	loong64 \
 	arc \
 
-X86=x86_64-linux-gnu
-MIPS=mips-linux-gnu
-POWERPC=powerpc-linux-gnu
-ARM=arm-linux-gnueabihf
-SPARC=sparc64-linux-gnu
+X86=x86_64-aosc-linux-gnu
+MIPS=mips-aosc-linux-gnu
+POWERPC=powerpc-aosc-linux-gnu
+ARM=arm-aosc-linux-gnueabihf
+SPARC=sparc64-aosc-linux-gnu
 -include config
 all: $(ARCHS:%=arch-test-%)
 
@@ -116,8 +116,8 @@ arch-test-ppc64: ppc64.s
 	$(POWERPC)-ld -z noexecstack -melf64ppc -s ppc64.o -o $@
 
 arch-test-ppc64el: ppc64el.s
-	powerpc64le-linux-gnu-as -mpower8 $^ -o ppc64el.o
-	powerpc64le-linux-gnu-ld -z noexecstack -s ppc64el.o -o $@
+	powerpc64le-aosc-linux-gnu-as -mpower8 $^ -o ppc64el.o
+	powerpc64le-aosc-linux-gnu-ld -z noexecstack -s ppc64el.o -o $@
 
 arch-test-powerpcspe: powerpcspe.s
 	$(POWERPC)-as -a32 -me500 $^ -o powerpcspe.o
@@ -128,8 +128,8 @@ arch-test-s390x: s390x.s
 	s390x-linux-gnu-ld -z noexecstack -s s390x.o -o $@
 
 arch-test-arm64: arm64.s
-	aarch64-linux-gnu-as $^ -o arm64.o
-	aarch64-linux-gnu-ld -z noexecstack -s arm64.o -o $@
+	aarch64-aosc-linux-gnu-as $^ -o arm64.o
+	aarch64-aosc-linux-gnu-ld -z noexecstack -s arm64.o -o $@
 
 arch-test-arm64ilp32: arm64.s
 	aarch64-linux-gnu-as -mabi=ilp32 $^ -o arm64ilp32.o
@@ -180,8 +180,8 @@ arch-test-riscv64: riscv64.s
 	$(RISCV)-ld -z noexecstack -m elf64lriscv -s riscv64.o -o $@
 
 arch-test-loong64: loong64.s
-	loongarch64-linux-gnu-as $^ -o loong64.o
-	loongarch64-linux-gnu-ld -z noexecstack -s loong64.o -o $@
+	loongarch64-aosc-linux-gnu-as $^ -o loong64.o
+	loongarch64-aosc-linux-gnu-ld -z noexecstack -s loong64.o -o $@
 
 arch-test-arc: arc.s
 	arc-linux-gnu-as $^ -o arc.o

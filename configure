@@ -30,14 +30,14 @@ sub alt
     }
 }
 
-alt qw(X86 x86_64-linux-gnu i386-linux-gnu i486-linux-gnu i586-linux-gnu
-    i686-linux-gnu x86_64-linux-gnux32);
-alt qw(MIPS mips-linux-gnu mipsel-linux-gnu mips64-linux-gnuabi64
-    mips64el-linux-gnuabi64);
-alt qw(POWERPC powerpc-linux-gnu powerpc64-linux-gnu);
-alt qw(ARM arm-linux-gnueabihf arm-linux-gnueabi);
-alt qw(SPARC sparc64-linux-gnu sparc-linux-gnu);
-alt qw(RISCV riscv64-linux-gnu riscv32-linux-gnu);
+alt qw(X86 x86_64-aosc-linux-gnu i386-aosc-linux-gnu i486-aosc-linux-gnu i586-aosc-linux-gnu
+    i686-aosc-linux-gnu x86_64-aosc-linux-gnux32);
+alt qw(MIPS mips-aosc-linux-gnu mipsel-aosc-linux-gnu mips64-aosc-linux-gnuabi64
+    mips64el-aosc-linux-gnuabi64);
+alt qw(POWERPC powerpc-aosc-linux-gnu powerpc64-aosc-linux-gnu);
+alt qw(ARM arm-aosc-linux-gnueabihf arm-aosc-linux-gnueabi);
+alt qw(SPARC sparc64-aosc-linux-gnu sparc-aosc-linux-gnu);
+alt qw(RISCV riscv64-aosc-linux-gnu riscv32-aosc-linux-gnu);
 
 while (/^arch-test-([a-z0-9-]+):.*\n\t([a-z0-9_.-]+-(?:gcc|as))/mg)
 {
